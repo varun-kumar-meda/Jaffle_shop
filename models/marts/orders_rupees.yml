@@ -1,0 +1,41 @@
+version: 2
+
+models:
+  - name: orders_rupees
+    description: >
+      The `orders_rupees` model transforms order data from multiple sources, focusing on calculating order-level metrics in Indian Rupees (INR). It aggregates order item data, calculates totals in INR, and tracks customer order history.
+    columns:
+      - name: customer_id
+        description: >
+          The unique identifier for the customer who placed the order.
+      - name: order_id
+        description: >
+          The unique identifier for the order.
+      - name: location_id
+        description: >
+          The unique identifier for the location where the order was placed.
+      - name: subtotal_inr
+        description: >
+          The subtotal of the order in INR (before taxes and other charges).
+      - name: tax_paid_inr
+        description: >
+          The amount of tax paid for the order in INR.
+      - name: order_total_inr
+        description: >
+          The total amount paid for the order in INR (including tax).
+      - name: order_cost_inr
+        description: >
+          The total supply cost for all items in the order in INR (converted from USD).
+      - name: order_items_subtotal_inr
+        description: >
+          The total product price for all items in the order in INR (converted from USD).
+      - name: count_order_items
+        description: >
+          The total number of items in the order.
+      - name: customer_order_number
+        description: >
+          A sequential number indicating the order's sequence for the customer, ordered by the date and time the order was placed.
+      - name: currency
+        description: >
+          The constant value `'INR'`, representing the currency for all order-related amounts.
+

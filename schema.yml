@@ -1,0 +1,39 @@
+version: 2
+
+sources:
+  - name: raw
+    schema: RAW
+    tables:
+      - name: raw_orders
+        description: "The raw orders table containing customer order details."
+        columns:
+          - name: id
+            description: "The unique identifier for the order."
+          - name: customer
+            description: "The foreign key referencing the unique identifier of the customer from the raw_customers table."
+          - name: ordered_at
+            description: "The timestamp when the order was placed."
+          - name: store_id
+            description: "The unique identifier for the store where the order was placed."
+          - name: subtotal
+            description: "The subtotal of the order."
+          - name: tax_paid
+            description: "The tax paid for the order."
+          - name: order_total
+            description: "The total amount paid for the order."
+
+      - name: raw_customers
+        description: "The raw customers table containing customer details."
+        columns:
+          - name: id
+            description: "The unique identifier for the customer."
+          - name: name
+            description: "The name of the customer."
+
+tests:
+  - dbt_constraints.foreign_key:
+      source: raw_orders
+      column: customer
+      reference:
+        source: raw_customers
+        column: id

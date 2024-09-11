@@ -5,4 +5,6 @@ packages:
     version: 0.10.0
   - git: https://github.com/dbt-labs/dbt-audit-helper.git
     revision: c0be07f84e61dd01517292a15a2c084af9c95f01
-sha1_hash: da0d5b1d5a48f6504805f6b1d5a0b2f9f233f34c
+  - package: Snowflake-Labs/dbt_constraints
+    version: 1.0.3
+sha1_hash: e33418a7898360a6b08daae5e130dd1cc5c3a97a

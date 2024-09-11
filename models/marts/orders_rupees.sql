@@ -70,7 +70,7 @@ customer_order_count as (
         row_number() over (
             partition by customer_id
             order by ordered_at asc
-        ) as customer_order_number
+        ) as customer_order_number,'INR' as currency
 
     from compute_booleans
 
