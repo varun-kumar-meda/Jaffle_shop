@@ -1,3 +1,8 @@
+{{ config(
+    materialized='table', 
+    post_hook="GRANT SELECT ON {{ this }} TO ROLE public"
+) }}
+
 with
 
 orders as (

@@ -4,6 +4,7 @@ models:
   - name: orders_rupees
     description: >
       The `orders_rupees` model transforms order data from multiple sources, focusing on calculating order-level metrics in Indian Rupees (INR). It aggregates order item data, calculates totals in INR, and tracks customer order history.
+    
     columns:
       - name: customer_id
         description: >
